@@ -41,7 +41,7 @@ form.addEventListener("submit", async (e) => {
       form.reset();
 
       // Redirect to the new page here
-      window.location.href = "/secondpage.html"; // Change to your desired page
+      window.location.href = "secondpage.html"; // Change to your desired page
     } else {
       confirmationMessage.textContent = "Failed to send message to Telegram.";
       confirmationMessage.classList.add("text-red-500"); // Error styling
